@@ -4,36 +4,123 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dced775-97f5-4e92-ab61-b0f22ed72416" name="Changes" comment="">
+    <list default="true" id="7dced775-97f5-4e92-ab61-b0f22ed72416" name="Changes" comment="SQL file and MainServer">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/BattleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/CardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/DeckController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/TradingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/model/Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/BattleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/CardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/DeckRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/TradeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/CardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/TradingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/Authentification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/HttpServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/RequestHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/controller/BattleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/controller/CardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/controller/DeckController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/controller/TradeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/BattleRespository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/CardRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/Database.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/TradeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/models/Battle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/models/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/models/Deck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/models/Trade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/service/BattleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/service/CardService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/Testing.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NaJoKa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NaJoKa/SWEN1_3.git&quot;,
+    &quot;accountId&quot;: &quot;4c9a137d-7d02-4114-bde2-9dd5c79dd4f7&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2tajnP1ij3SQa6maOUBUjdXmcLH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/johan/SWEN1_3/src/main/java/org/example/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.SWEN1_3 [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.SWEN1_3 [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.SWEN1_3 [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/johan/SWEN1_3/src/test/java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/johan/SWEN1_3/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="mtcg.server.ServerMain" />
+      <module name="SWEN1_3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -50,22 +137,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740597247523</updated>
-      <workItem from="1740597249070" duration="8000" />
+      <workItem from="1740597249070" duration="21681000" />
     </task>
+    <task id="LOCAL-00001" summary="DatabaseConnection">
+      <option name="closed" value="true" />
+      <created>1740678057945</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740678057945</updated>
+    </task>
+    <task id="LOCAL-00002" summary="SQL file and MainServer">
+      <option name="closed" value="true" />
+      <created>1740678116732</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1740678116732</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="DatabaseConnection" />
+    <MESSAGE value="SQL file and MainServer" />
+    <option name="LAST_COMMIT_MESSAGE" value="SQL file and MainServer" />
   </component>
 </project>
