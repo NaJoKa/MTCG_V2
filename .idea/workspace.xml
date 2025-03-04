@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dced775-97f5-4e92-ab61-b0f22ed72416" name="Changes" comment="SQL file and MainServer">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/BattleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/CardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/DeckController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/TradingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/model/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/BattleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/CardRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/DeckRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/TradeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/CardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/TradingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/UserService.java" afterDir="false" />
+    <list default="true" id="7dced775-97f5-4e92-ab61-b0f22ed72416" name="Changes" comment="Main Outputs added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/Authentification.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/HttpServer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/Main.java" beforeDir="false" />
@@ -28,12 +14,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/controller/BattleController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/controller/CardController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/controller/DeckController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/controller/TradeController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/controller/UserController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/BattleRespository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/CardRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/Database.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/TradeRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/UserRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/database/schema.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/models/Battle.java" beforeDir="false" />
@@ -44,6 +28,30 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/service/BattleService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/service/CardService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/BattleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/BattleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/CardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/DeckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/DeckController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/PackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/PackageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/ScoreboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/ScoreboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/SessionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/StatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/StatsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/TradingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/TradingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/TransactionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/database/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/BattleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/BattleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/CardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/DeckRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/DeckRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/PackageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/PackageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/TradeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/TradeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/server/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/CardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/DeckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/DeckService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/PackageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/TradingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/TradingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/Testing.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,30 +96,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SWEN1_3 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SWEN1_3 [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SWEN1_3 [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/johan/SWEN1_3/src/test/java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/johan/SWEN1_3/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Server.executor": "Run",
+    "Maven.SWEN1_3 [clean].executor": "Run",
+    "Maven.SWEN1_3 [compile].executor": "Run",
+    "Maven.SWEN1_3 [deploy].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/johan/SWEN1_3/src/test/java",
+    "last_opened_file_path": "C:/Users/johan/SWEN1_3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/johan/SWEN1_3/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="mtcg.server.ServerMain" />
@@ -137,7 +146,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740597247523</updated>
-      <workItem from="1740597249070" duration="21681000" />
+      <workItem from="1740597249070" duration="29765000" />
+      <workItem from="1741012053539" duration="8832000" />
     </task>
     <task id="LOCAL-00001" summary="DatabaseConnection">
       <option name="closed" value="true" />
@@ -155,7 +165,87 @@
       <option name="project" value="LOCAL" />
       <updated>1740678116732</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="new controller files - service files added Project Structure is model/servic/repository/controller">
+      <option name="closed" value="true" />
+      <created>1740864579253</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1740864579253</updated>
+    </task>
+    <task id="LOCAL-00004" summary="trading files">
+      <option name="closed" value="true" />
+      <created>1740864616806</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740864616806</updated>
+    </task>
+    <task id="LOCAL-00005" summary="User -Controller and Service">
+      <option name="closed" value="true" />
+      <created>1741007945662</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741007945662</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Deck -Controller and Service">
+      <option name="closed" value="true" />
+      <created>1741007991333</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741007991333</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Card -Controller, Repository and Service">
+      <option name="closed" value="true" />
+      <created>1741008022751</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741008022751</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Battle -Controller, Repository">
+      <option name="closed" value="true" />
+      <created>1741008073683</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1741008073683</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Junit und Postgres Dependency">
+      <option name="closed" value="true" />
+      <created>1741008436911</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741008436911</updated>
+    </task>
+    <task id="LOCAL-00010" summary="XML file update">
+      <option name="closed" value="true" />
+      <created>1741008479535</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1741008479535</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Card">
+      <option name="closed" value="true" />
+      <created>1741012162877</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1741012162877</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Main Outputs added">
+      <option name="closed" value="true" />
+      <created>1741012238256</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1741012238256</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +265,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="DatabaseConnection" />
     <MESSAGE value="SQL file and MainServer" />
-    <option name="LAST_COMMIT_MESSAGE" value="SQL file and MainServer" />
+    <MESSAGE value="new controller files - service files added Project Structure is model/servic/repository/controller" />
+    <MESSAGE value="trading files" />
+    <MESSAGE value="User -Controller and Service" />
+    <MESSAGE value="Deck -Controller and Service" />
+    <MESSAGE value="Card -Controller, Repository and Service" />
+    <MESSAGE value="Battle -Controller, Repository" />
+    <MESSAGE value="Junit und Postgres Dependency" />
+    <MESSAGE value="XML file update" />
+    <MESSAGE value="Card" />
+    <MESSAGE value="Main Outputs added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main Outputs added" />
   </component>
 </project>
