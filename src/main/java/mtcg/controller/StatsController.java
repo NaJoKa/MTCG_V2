@@ -12,6 +12,7 @@ public class StatsController {
     private UserService userService = new UserService();
 
     public StatsController(HttpServer server) {
+        System.out.println("Registrierun Endpunkt /stats");
         server.createContext("/stats", new HttpHandler() {
             @Override
             public void handle(HttpExchange exchange) throws IOException {
@@ -29,6 +30,7 @@ public class StatsController {
                     return;
                 }
                 String username = auth.substring(7, auth.indexOf("-mtcgToken"));
+                System.out.println("StatsController: " + username + "fragt stats ab");
                 String response = userService.getStats(username);
                 exchange.sendResponseHeaders(200, response.getBytes(StandardCharsets.UTF_8).length);
                 OutputStream os = exchange.getResponseBody();

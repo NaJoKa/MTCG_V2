@@ -22,18 +22,24 @@ public class GameService {
     public String startBattle(String username, String opponentUsername) {
         User user1 = userRepo.getUser(username);
         User user2 = userRepo.getUser(opponentUsername);
-        if (user1 == null || user2 == null)
+        if (user1 == null || user2 == null) {
+            System.out.println("GameService: Einer der User existiert nicht.");
             return "Einer der User existiert nicht.";
+        }
         List<Card> deck1 = deckRepo.getDeck(user1.getId());
         List<Card> deck2 = deckRepo.getDeck(user2.getId());
-        if (deck1.size() != 4 || deck2.size() != 4)
+        if (deck1.size() != 4 || deck2.size() != 4){
+            System.out.println("GameService: Beide Spieler müssen ein Deck mit 4 Karten haben.");
             return "Beide Spieler müssen ein Deck mit 4 Karten haben.";
+        }
+        System.out.println("GameService: Battle startet zwischen " + username + " und " + opponentUsername);
         StringBuilder log = new StringBuilder();
         int rounds = 0;
         while (!deck1.isEmpty() && !deck2.isEmpty() && rounds < 100) {
             rounds++;
             Card card1 = deck1.remove((int)(Math.random() * deck1.size()));
             Card card2 = deck2.remove((int)(Math.random() * deck2.size()));
+            System.out.println("Runde " + rounds + ": " + card1.getName() + " vs. " + card2.getName());
             // Unique Feature: Sphinx gewinnt automatisch, falls sie gespielt wird und der Gegner nicht ebenfalls Sphinx
             if (card1.getName().equalsIgnoreCase("Sphinx") && !card2.getName().equalsIgnoreCase("Sphinx")) {
                 log.append("Round ").append(rounds).append(": ").append(card1.getName()).append(" (Sphinx) gewinnt automatisch gegen ").append(card2.getName()).append("\n");
@@ -71,6 +77,7 @@ public class GameService {
         userRepo.updateUser(user1);
         userRepo.updateUser(user2);
         log.append("Gewinner: ").append(winner);
+        System.out.println("Battle beendet. Gewinner: " + winner);
         return log.toString();
     }
 

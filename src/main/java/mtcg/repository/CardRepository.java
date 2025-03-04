@@ -19,6 +19,7 @@ public class CardRepository {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next())
                 card.setId(rs.getInt(1));
+            System.out.println("CardRepository: Karte " + card.getName() + " hinzugefügt für UserID " + card.getUserId());
         } catch (SQLException e) {
             e.printStackTrace();
         }

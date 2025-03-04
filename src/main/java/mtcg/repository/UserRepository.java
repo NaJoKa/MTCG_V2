@@ -32,6 +32,7 @@ public class UserRepository {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next())
                 user.setId(rs.getInt(1));
+            System.out.println("UserRepository: User " + user.getUsername() + " erstellt.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -74,6 +75,7 @@ public class UserRepository {
             ps.setInt(3, user.getElo());
             ps.setInt(4, user.getId());
             ps.executeUpdate();
+            System.out.println("UserRepository: User " + user.getUsername() + " aktualisiert.");
         } catch (SQLException e) {
             e.printStackTrace();
         }

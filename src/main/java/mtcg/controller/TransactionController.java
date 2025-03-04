@@ -12,6 +12,7 @@ public class TransactionController {
     private PackageService packageService = new PackageService();
 
     public TransactionController(HttpServer server) {
+        System.out.println("Registrierung Endpunkt /transactions/packages");
         server.createContext("/transactions/packages", new HttpHandler() {
             @Override
             public void handle(HttpExchange exchange) throws IOException {
@@ -26,6 +27,7 @@ public class TransactionController {
                         return;
                     }
                     String token = auth.substring(7, auth.indexOf("-mtcgToken"));
+                    System.out.println("TransactionController: " + token + " möchte ein Package haben");
                     boolean success = packageService.acquirePackage(token);
                     String response = success ? "{\"message\":\"Package acquired\"}" : "{\"message\":\"Not enough money or no package available\"}";
                     int code = success ? 201 : 400;

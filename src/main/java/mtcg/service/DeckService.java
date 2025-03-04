@@ -17,8 +17,10 @@ public class DeckService {
     public boolean configureDeck(String username, String json) {
         try {
             int[] cardIds = mapper.readValue(json, int[].class);
-            if (cardIds.length != 4)
+            if (cardIds.length != 4) {
+                System.out.println("DeckService: Deck-Konfiguration fehlgeschlagen: Es müssen genau 4 Karten ausgewählt werden.");
                 return false;
+            }
             int userId = userRepo.getUser(username).getId();
             List<Card> cards = cardRepo.getCardsByUserId(userId);
             for (int id : cardIds) {
@@ -29,12 +31,15 @@ public class DeckService {
                         break;
                     }
                 }
-                if (!found)
+                if (!found) {
+                    System.out.println("DeckService: Karte mit ID " + id + " nicht im Stack gefunden.");
                     return false;
+                }
             }
             List<Integer> ids = new ArrayList<>();
             for (int id : cardIds) ids.add(id);
             deckRepo.setDeck(userId, ids);
+            System.out.println("DeckService: Deck für " + username + " konfiguriert.");
             return true;
         } catch(Exception e) {
             e.printStackTrace();

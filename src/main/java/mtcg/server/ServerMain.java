@@ -11,7 +11,7 @@ import mtcg.controller.DeckController;
 import mtcg.controller.StatsController;
 import mtcg.controller.ScoreboardController;
 import mtcg.controller.BattleController;
-import controller.TradingController;
+import mtcg.controller.TradingController;
 
 public class ServerMain {
     public static void main(String[] args) throws Exception {

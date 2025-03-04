@@ -13,6 +13,7 @@ public class UserController {
     private UserService userService = new UserService();
 
     public UserController(HttpServer server) {
+        System.out.println("UserController constructor, registriere endpunkt /users");
         server.createContext("/users", new HttpHandler() {
             @Override
             public void handle(HttpExchange exchange) throws IOException {
@@ -22,6 +23,7 @@ public class UserController {
                 // Registrierung: POST /users
                 if ("POST".equalsIgnoreCase(method) && path.equals("/users")) {
                     String body = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
+                    System.out.println("UserController: Registrierungsdaten" + body);
                     boolean success = userService.registerUserFromJson(body);
                     String response = success ? "{\"message\":\"Success\"}" : "{\"message\":\"User already exists\"}";
                     int code = success ? 201 : 400;
@@ -45,6 +47,7 @@ public class UserController {
                         os.close();
                     } else if ("PUT".equalsIgnoreCase(method)) {
                         String body = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
+                        System.out.println("UserController: Update für " + username + " mit Daten: " + body);
                         boolean success = userService.updateUserProfile(username, body);
                         String response = success ? "{\"message\":\"Profile updated\"}" : "{\"message\":\"Update failed\"}";
                         int code = success ? 200 : 400;

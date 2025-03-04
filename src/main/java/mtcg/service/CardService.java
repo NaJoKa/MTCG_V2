@@ -11,6 +11,7 @@ public class CardService {
 
     public String getCardsJson(String username) {
         int userId = userRepo.getUser(username).getId();
+        System.out.println("CardService: Hole Karten für UserID: " + userId);
         try {
             return mapper.writeValueAsString(cardRepo.getCardsByUserId(userId));
         } catch(Exception e) {

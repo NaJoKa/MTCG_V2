@@ -12,6 +12,7 @@ public class PackageController {
     private PackageService packageService = new PackageService();
 
     public PackageController(HttpServer server) {
+        System.out.println("Registrierung Endpunkt /packages");
         server.createContext("/packages", new HttpHandler() {
             @Override
             public void handle(HttpExchange exchange) throws IOException {
@@ -27,6 +28,7 @@ public class PackageController {
                         return;
                     }
                     String body = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
+                    System.out.println("PackageController: Package erstellen " + body);
                     boolean success = packageService.createPackage(body);
                     String response = success ? "{\"message\":\"Package created\"}" : "{\"message\":\"Package creation failed\"}";
                     int code = success ? 201 : 400;

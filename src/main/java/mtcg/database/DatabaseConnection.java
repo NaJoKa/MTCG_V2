@@ -10,6 +10,9 @@ public class DatabaseConnection {
     private static final String PASSWORD = "mtcgdatabase";
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+        System.out.println("DB: Connecting to database -  Versuch...");
+        Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+        System.out.println("DB: Verbindung hergestellt!");
+        return conn;
     }
 }

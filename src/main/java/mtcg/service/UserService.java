@@ -11,6 +11,7 @@ public class UserService {
     public boolean registerUserFromJson(String json) {
         try {
             RegistrationData data = mapper.readValue(json, RegistrationData.class);
+            System.out.println("UserReservice: Registrierung: " + data.getUsername());
             if (userRepo.userExists(data.getUsername()))
                 return false;
             User user = new User(data.getUsername(), data.getPassword(), 20, 100);
@@ -25,6 +26,7 @@ public class UserService {
     public String loginUserAndGetToken(String json) {
         try {
             RegistrationData data = mapper.readValue(json, RegistrationData.class);
+            System.out.println("UserService: Login-Versuch: " + data.getUsername());
             if (userRepo.validateUser(data.getUsername(), data.getPassword()))
                 return data.getUsername() + "-mtcgToken";
         } catch(Exception e) {
@@ -50,6 +52,7 @@ public class UserService {
             if (user == null) return false;
             // Für dieses Beispiel wird nur das Passwort aktualisiert
             ProfileData data = mapper.readValue(json, ProfileData.class);
+            System.out.println("UserService: Profil wird aktualsiert für: " + user.getUsername());
             if (data.getPassword() != null && !data.getPassword().isEmpty())
                 user.setPassword(data.getPassword());
             userRepo.updateUser(user);

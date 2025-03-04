@@ -13,6 +13,7 @@ public class DeckController {
     private DeckService deckService = new DeckService();
 
     public DeckController(HttpServer server) {
+        System.out.println("Registrierung Endpunkt /deck");
         server.createContext("/deck", new HttpHandler() {
             @Override
             public void handle(HttpExchange exchange) throws IOException {
@@ -31,6 +32,7 @@ public class DeckController {
                     URI uri = exchange.getRequestURI();
                     String query = uri.getQuery();
                     boolean plain = query != null && query.contains("format=plain");
+                    System.out.println("DeckController: get deck für " + username);
                     String response = deckService.getDeckJson(username, plain);
                     exchange.sendResponseHeaders(200, response.getBytes(StandardCharsets.UTF_8).length);
                     OutputStream os = exchange.getResponseBody();
@@ -38,6 +40,7 @@ public class DeckController {
                     os.close();
                 } else if ("PUT".equalsIgnoreCase(method)) {
                     String body = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
+                    System.out.println("DeckController: put deck für " + username + " mit" + body);
                     boolean success = deckService.configureDeck(username, body);
                     String response = success ? "{\"message\":\"Deck configured\"}" : "{\"message\":\"Deck configuration failed\"}";
                     int code = success ? 200 : 400;

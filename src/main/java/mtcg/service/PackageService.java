@@ -1,13 +1,13 @@
 package mtcg.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import mtcg.repository.PackageRepository;
 import mtcg.repository.UserRepository;
 import mtcg.repository.CardRepository;
 import mtcg.model.Card;
 import mtcg.model.User;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PackageService {
     private PackageRepository packageRepo = new PackageRepository();
@@ -18,7 +18,7 @@ public class PackageService {
     public boolean createPackage(String json) {
         try {
             CardDefinition[] cards = mapper.readValue(json, CardDefinition[].class);
-            // Jede Package-Aktion enthält 5 Karten
+            System.out.println("PackageService: Erstelle Package mit " + cards.length + " Karten.");
             for (CardDefinition cd : cards) {
                 packageRepo.addPackageCard(cd);
             }
@@ -31,29 +31,37 @@ public class PackageService {
 
     public boolean acquirePackage(String username) {
         User user = userRepo.getUser(username);
-        if (user == null || user.getCoins() < 5)
+        if (user == null || user.getCoins() < 5) {
+            System.out.println("PackageService: Erwerb fehlgeschlagen: User nicht vorhanden oder nicht genügend Coins.");
             return false;
+        }
         List<Card> pkg = packageRepo.acquirePackage();
-        if (pkg == null || pkg.isEmpty())
+        if (pkg == null || pkg.isEmpty()) {
+            System.out.println("PackageService: Keine Packages verfügbar.");
             return false;
+        }
         user.setCoins(user.getCoins() - 5);
         userRepo.updateUser(user);
         for (Card card : pkg) {
             card.setUserId(user.getId());
             cardRepo.addCard(card);
         }
+        System.out.println("PackageService: Package von " + username + " erfolgreich erworben.");
         return true;
     }
 
     public static class CardDefinition {
         @JsonProperty("Id")
-        private String Id;
+        private String id;
         @JsonProperty("Name")
-        private String Name;
+        private String name;
         @JsonProperty("Damage")
-        private double Damage;
-        public String getId() { return Id; } public void setId(String id) { this.Id = id; }
-        public String getName() { return Name; } public void setName(String name) { this.Name = name; }
-        public double getDamage() { return Damage; } public void setDamage(double damage) { this.Damage = damage; }
+        private double damage;
+        public String getId() { return id; }
+        public void setId(String id) { this.id = id; }
+        public String getName() { return name; }
+        public void setName(String name) { this.name = name; }
+        public double getDamage() { return damage; }
+        public void setDamage(double damage) { this.damage = damage; }
     }
 }

@@ -1,4 +1,4 @@
-package controller;
+package mtcg.controller;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -13,6 +13,7 @@ public class TradingController {
     private TradingService tradingService = new TradingService();
 
     public TradingController(HttpServer server) {
+        System.out.println("Registrierung Endpunkt /tradings");
         server.createContext("/tradings", new HttpHandler() {
             @Override
             public void handle(HttpExchange exchange) throws IOException {
@@ -28,6 +29,7 @@ public class TradingController {
                 }
                 String username = auth.substring(7, auth.indexOf("-mtcgToken"));
                 if ("GET".equalsIgnoreCase(method)) {
+                    System.out.println("TradingController: get tradings, handel wird abgefragt von " + username);
                     String response = tradingService.getTradingsJson(username);
                     exchange.sendResponseHeaders(200, response.getBytes(StandardCharsets.UTF_8).length);
                     OutputStream os = exchange.getResponseBody();
@@ -38,6 +40,7 @@ public class TradingController {
                     URI uri = exchange.getRequestURI();
                     String path = uri.getPath();
                     if (path.equals("/tradings")) {
+                        System.out.println("TradingController: post tradings, handel wird erstellt von " + username);
                         boolean success = tradingService.createTradingDeal(username, body);
                         String response = success ? "{\"message\":\"Trade created\"}" : "{\"message\":\"Trade creation failed\"}";
                         int code = success ? 201 : 400;
@@ -51,6 +54,7 @@ public class TradingController {
                         if (parts.length == 3) {
                             String tradeId = parts[2];
                             String offeredCardId = body.replaceAll("\"", "").trim();
+                            System.out.println("TradingController: Nutzer " + username + " führt Handel aus für Trade " + tradeId + " mit angebotener Karte " + offeredCardId);
                             boolean success = tradingService.executeTrade(username, tradeId, offeredCardId);
                             String response = success ? "{\"message\":\"Trade successful\"}" : "{\"message\":\"Trade failed\"}";
                             int code = success ? 200 : 400;
@@ -66,6 +70,7 @@ public class TradingController {
                     String[] parts = exchange.getRequestURI().getPath().split("/");
                     if (parts.length == 3) {
                         String tradeId = parts[2];
+                        System.out.println("TradingController: Nutzer " + username + " möchte Handel " + tradeId + " löschen.");
                         boolean success = tradingService.deleteTradingDeal(username, tradeId);
                         String response = success ? "{\"message\":\"Trade deleted\"}" : "{\"message\":\"Trade deletion failed\"}";
                         int code = success ? 200 : 400;

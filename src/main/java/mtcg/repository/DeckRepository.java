@@ -21,6 +21,7 @@ public class DeckRepository {
                     insertStmt.executeUpdate();
                 }
             }
+            System.out.println("DeckRepository: Deck für UserID " + userId + " konfiguriert.");
         } catch (SQLException e) {
             e.printStackTrace();
         }

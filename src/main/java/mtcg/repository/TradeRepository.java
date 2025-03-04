@@ -13,6 +13,7 @@ public class TradeRepository {
             ps.setInt(1, sellerId);
             ps.setInt(2, cardId);
             ps.executeUpdate();
+            System.out.println("TradeRepository: Trade erstellt für SellerID " + sellerId + " mit CardID " + cardId);
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -30,6 +31,7 @@ public class TradeRepository {
                 String trade = "TradeID: " + rs.getInt("id") + ", SellerID: " + rs.getInt("seller_id") + ", CardID: " + rs.getInt("card_id");
                 trades.add(trade);
             }
+            System.out.println("TradeRepository: Alle Trades abgerufen.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -43,6 +45,7 @@ public class TradeRepository {
             ps.setInt(1, tradeId);
             ps.setInt(2, userId);
             int affected = ps.executeUpdate();
+            System.out.println("TradeRepository: Trade " + tradeId + " gelöscht.");
             return affected > 0;
         } catch(SQLException e) {
             e.printStackTrace();
@@ -58,7 +61,10 @@ public class TradeRepository {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 int sellerId = rs.getInt("seller_id");
-                if (sellerId == buyerId) return false;
+                if (sellerId == buyerId){
+                    System.out.println("TradeRepository: Handel mit sich selbst nicht erlaubt.");
+                    return false;
+                }
             } else return false;
         } catch(SQLException e) {
             e.printStackTrace();

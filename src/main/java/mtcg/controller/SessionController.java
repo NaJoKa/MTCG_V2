@@ -12,11 +12,13 @@ public class SessionController {
     private UserService userService = new UserService();
 
     public SessionController(HttpServer server) {
+        System.out.println("Registrierung endpunkt /sessions");
         server.createContext("/sessions", new HttpHandler() {
             @Override
             public void handle(HttpExchange exchange) throws IOException {
                 if ("POST".equalsIgnoreCase(exchange.getRequestMethod())) {
                     String body = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
+                    System.out.println("SessionController: Login-Daten " + body);
                     String token = userService.loginUserAndGetToken(body);
                     String response;
                     if (token != null) {

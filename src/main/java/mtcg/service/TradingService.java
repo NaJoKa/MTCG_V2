@@ -16,11 +16,11 @@ public class TradingService {
     public boolean createTradingDeal(String username, String json) {
         try {
             TradeDeal deal = mapper.readValue(json, TradeDeal.class);
+            System.out.println("TradingService: Erstelle Handelsangebot für " + username + ": " + json);
             var user = userRepo.getUser(username);
             if (user == null)
                 return false;
-            // Annahme: CardToTrade ist eine Zahl als String
-            CardService dummy = new CardService();
+            // Hier wird angenommen, dass CardToTrade eine Zahl als String ist
             var card = cardRepo.getCardById(Integer.parseInt(deal.getCardToTrade()));
             if (card == null || card.getUserId() != user.getId())
                 return false;
@@ -57,18 +57,18 @@ public class TradingService {
             return false;
         int tid = Integer.parseInt(tradeId);
         int offerCardId = Integer.parseInt(offeredCardId);
-        // Hier soll verhindert werden, dass man mit sich selbst handelt
+        System.out.println("TradingService: " + username + " führt Trade " + tradeId + " mit angebotener Karte " + offerCardId + " aus.");
         return tradeRepo.executeTrade(tid, user.getId(), offerCardId);
     }
 
     public static class TradeDeal {
-        private String Id;
-        private String CardToTrade;
-        private String Type;
-        private int MinimumDamage;
-        public String getId() { return Id; } public void setId(String id) { this.Id = id; }
-        public String getCardToTrade() { return CardToTrade; } public void setCardToTrade(String cardToTrade) { this.CardToTrade = cardToTrade; }
-        public String getType() { return Type; } public void setType(String type) { this.Type = type; }
-        public int getMinimumDamage() { return MinimumDamage; } public void setMinimumDamage(int minimumDamage) { this.MinimumDamage = minimumDamage; }
+        private String id;
+        private String cardToTrade;
+        private String type;
+        private int minimumDamage;
+        public String getId() { return id; } public void setId(String id) { this.id = id; }
+        public String getCardToTrade() { return cardToTrade; } public void setCardToTrade(String cardToTrade) { this.cardToTrade = cardToTrade; }
+        public String getType() { return type; } public void setType(String type) { this.type = type; }
+        public int getMinimumDamage() { return minimumDamage; } public void setMinimumDamage(int minimumDamage) { this.minimumDamage = minimumDamage; }
     }
 }

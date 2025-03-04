@@ -12,6 +12,7 @@ public class CardController {
     private CardService cardService = new CardService();
 
     public CardController(HttpServer server) {
+        System.out.println("Registrierung Endpunkt /cards");
         server.createContext("/cards", new HttpHandler() {
             @Override
             public void handle(HttpExchange exchange) throws IOException {
@@ -29,6 +30,7 @@ public class CardController {
                     return;
                 }
                 String username = auth.substring(7, auth.indexOf("-mtcgToken"));
+                System.out.println("CardController: " + username + " fragt Karten ab");
                 String response = cardService.getCardsJson(username);
                 exchange.sendResponseHeaders(200, response.getBytes(StandardCharsets.UTF_8).length);
                 OutputStream os = exchange.getResponseBody();

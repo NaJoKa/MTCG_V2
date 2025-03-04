@@ -13,14 +13,20 @@ public class PackageRepository {
         // Erzeuge eine Karte ohne Besitzer; setze default Element "Normal"
         Card card = new Card(0, 0, cd.getName(), "Normal", (int) cd.getDamage());
         currentPackage.add(card);
+        System.out.println("PackageRepository: Karte " + cd.getName() + " zum aktuellen Package hinzugefügt.");
         if (currentPackage.size() == 5) {
             packages.add(new ArrayList<>(currentPackage));
+            System.out.println("PackageRepository: Ein Package wurde erstellt.");
             currentPackage.clear();
         }
     }
 
     public List<Card> acquirePackage() {
-        if (packages.isEmpty()) return null;
+        if (packages.isEmpty()) {
+            System.out.println("PackageRepository: Keine Packages vorhanden.");
+            return null;
+        }
+        System.out.println("PackageRepository: Ein Package wird erworben.");
         return packages.remove(0);
     }
 }
