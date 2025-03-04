@@ -12,6 +12,7 @@ public class BattleController {
     private GameService gameService = new GameService();
 
     public BattleController(HttpServer server) {
+        System.out.println("Battlecontroller - Registierung endpunkt /battles");
         server.createContext("/battles", new HttpHandler() {
             @Override
             public void handle(HttpExchange exchange) throws IOException {
@@ -29,7 +30,8 @@ public class BattleController {
                     return;
                 }
                 String username = auth.substring(7, auth.indexOf("-mtcgToken"));
-                // Hier wird im Request-Body kein Gegner übergeben – wir setzen für dieses Beispiel einen Dummy-Gegner (z. B. "admin")
+                // Hier wird im Request-Body kein Gegner übergeben – "admin" wird vorausgesetzt
+                System.out.println("Battlecontroller: " + username + " steht im battle mit admin");
                 String opponent = "admin";
                 String response = gameService.startBattle(username, opponent);
                 exchange.sendResponseHeaders(200, response.getBytes(StandardCharsets.UTF_8).length);
