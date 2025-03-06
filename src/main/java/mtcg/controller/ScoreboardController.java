@@ -16,26 +16,9 @@ public class ScoreboardController {
         server.createContext("/scoreboard", new HttpHandler() {
             @Override
             public void handle(HttpExchange exchange) throws IOException {
-                if (!"GET".equalsIgnoreCase(exchange.getRequestMethod())) {
-                    exchange.sendResponseHeaders(405, -1);
-                    return;
+
                 }
-                String auth = exchange.getRequestHeaders().getFirst("Authorization");
-                if (auth == null || !auth.endsWith("-mtcgToken")) {
-                    String response = "{\"message\":\"Unauthorized\"}";
-                    exchange.sendResponseHeaders(401, response.getBytes(StandardCharsets.UTF_8).length);
-                    OutputStream os = exchange.getResponseBody();
-                    os.write(response.getBytes(StandardCharsets.UTF_8));
-                    os.close();
-                    return;
-                }
-                System.out.println("ScoreboardController: Scoreboard wird abeefragt");
-                String response = userService.getScoreboardJson();
-                exchange.sendResponseHeaders(200, response.getBytes(StandardCharsets.UTF_8).length);
-                OutputStream os = exchange.getResponseBody();
-                os.write(response.getBytes(StandardCharsets.UTF_8));
-                os.close();
             }
-        });
+        );
     }
 }
