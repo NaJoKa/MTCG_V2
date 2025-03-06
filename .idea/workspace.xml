@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dced775-97f5-4e92-ab61-b0f22ed72416" name="Changes" comment="Main Outputs added">
+    <list default="true" id="7dced775-97f5-4e92-ab61-b0f22ed72416" name="Changes" comment="Scoreboard not finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/Authentification.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/HttpServer.java" beforeDir="false" />
@@ -28,30 +28,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/service/BattleService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/service/CardService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mctgserver/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/BattleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/BattleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/CardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/DeckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/DeckController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/PackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/PackageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/ScoreboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/ScoreboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/SessionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/StatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/StatsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/TradingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/TradingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/TransactionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/database/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/BattleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/BattleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/CardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/DeckRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/DeckRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/PackageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/PackageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/TradeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/TradeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/server/ServerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/CardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/DeckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/DeckService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/PackageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/TradingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/TradingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mtcg/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mtcg/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/Testing.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,6 +76,8 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.Server.executor": "Run",
+    "JUnit.GameServiceTest.testRegisterUserSuccess.executor": "Run",
+    "JUnit.UserServiceTest.testRegisterUserSuccess.executor": "Run",
     "Maven.SWEN1_3 [clean].executor": "Run",
     "Maven.SWEN1_3 [compile].executor": "Run",
     "Maven.SWEN1_3 [deploy].executor": "Run",
@@ -114,14 +92,14 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/johan/SWEN1_3/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="mtcg.server.ServerMain" />
       <module name="SWEN1_3" />
@@ -129,6 +107,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GameServiceTest.testRegisterUserSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SWEN1_3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mtcg.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mtcg.test" />
+      <option name="MAIN_CLASS_NAME" value="mtcg.test.GameServiceTest" />
+      <option name="METHOD_NAME" value="testRegisterUserSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.testRegisterUserSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SWEN1_3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mtcg.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mtcg.test" />
+      <option name="MAIN_CLASS_NAME" value="mtcg.test.UserServiceTest" />
+      <option name="METHOD_NAME" value="testRegisterUserSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceTest.testRegisterUserSuccess" />
+        <item itemvalue="JUnit.GameServiceTest.testRegisterUserSuccess" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -147,7 +163,8 @@
       <option name="presentableId" value="Default" />
       <updated>1740597247523</updated>
       <workItem from="1740597249070" duration="29765000" />
-      <workItem from="1741012053539" duration="8832000" />
+      <workItem from="1741012053539" duration="9508000" />
+      <workItem from="1741201235340" duration="10416000" />
     </task>
     <task id="LOCAL-00001" summary="DatabaseConnection">
       <option name="closed" value="true" />
@@ -245,7 +262,55 @@
       <option name="project" value="LOCAL" />
       <updated>1741012238256</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Outputs added to imitate ClI - to show what happens while curlscript runs">
+      <option name="closed" value="true" />
+      <created>1741125909187</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1741125909187</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Outputs added to imitate ClI - to show what happens while curlscript runs">
+      <option name="closed" value="true" />
+      <created>1741125932887</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1741125932887</updated>
+    </task>
+    <task id="LOCAL-00015" summary="xml updated">
+      <option name="closed" value="true" />
+      <created>1741125953669</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1741125953669</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Databaseconnection configured correctly with docker">
+      <option name="closed" value="true" />
+      <created>1741285398575</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1741285398575</updated>
+    </task>
+    <task id="LOCAL-00017" summary="split unit tests into 2 testclasses">
+      <option name="closed" value="true" />
+      <created>1741286383613</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1741286383613</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Scoreboard not finished">
+      <option name="closed" value="true" />
+      <created>1741287207743</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1741287207743</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +340,11 @@
     <MESSAGE value="XML file update" />
     <MESSAGE value="Card" />
     <MESSAGE value="Main Outputs added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main Outputs added" />
+    <MESSAGE value="Outputs added to imitate ClI - to show what happens while curlscript runs" />
+    <MESSAGE value="xml updated" />
+    <MESSAGE value="Databaseconnection configured correctly with docker" />
+    <MESSAGE value="split unit tests into 2 testclasses" />
+    <MESSAGE value="Scoreboard not finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scoreboard not finished" />
   </component>
 </project>
