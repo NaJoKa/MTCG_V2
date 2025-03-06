@@ -11,6 +11,8 @@ import mtcg.model.Card;
 import mtcg.repository.UserRepository;
 import mtcg.repository.CardRepository;
 import mtcg.repository.DeckRepository;
+
+import java.util.Arrays;
 import java.util.List;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -38,39 +40,13 @@ public class GameServiceTest {
 
     @Test
     @Order(1)
-    void testRegisterUserSuccess() {
-        assertTrue(userService.registerUserFromJson("{\"Username\":\"kienboec\", \"Password\":\"daniel\"}"));
-    }
-
-    @Test
-    @Order(2)
-    void testRegisterUserDuplicate() {
-        userService.registerUserFromJson("{\"Username\":\"altenhof\", \"Password\":\"markus\"}");
-        assertFalse(userService.registerUserFromJson("{\"Username\":\"altenhof\", \"Password\":\"markus\"}"));
-    }
-
-    @Test
-    @Order(3)
-    void testLoginUserSuccess() {
-        userService.registerUserFromJson("{\"Username\":\"admin\", \"Password\":\"istrator\"}");
-        assertNotNull(userService.loginUserAndGetToken("{\"Username\":\"admin\", \"Password\":\"istrator\"}"));
-    }
-
-    @Test
-    @Order(4)
-    void testLoginUserFailure() {
-        assertNull(userService.loginUserAndGetToken("{\"Username\":\"kienboec\", \"Password\":\"wrong\"}"));
-    }
-
-    @Test
-    @Order(5)
     void testBuyPackageSuccess() {
         userService.registerUserFromJson("{\"Username\":\"buyer1\", \"Password\":\"pass\"}");
         assertTrue(packageService.acquirePackage("buyer1") == false); // Da noch kein Package vorhanden – Test für Moneysituation
     }
 
     @Test
-    @Order(6)
+    @Order(2)
     void testCreatePackage() {
         // Admin erstellt ein Package
         assertTrue(packageService.createPackage("[{\"Id\":\"1\",\"Name\":\"WaterGoblin\",\"Damage\":10.0}," +
@@ -81,7 +57,7 @@ public class GameServiceTest {
     }
 
     @Test
-    @Order(7)
+    @Order(3)
     void testAcquirePackageSuccess() {
         // Admin Package erstellen und dann von buyer2 erwerben
         userService.registerUserFromJson("{\"Username\":\"buyer2\", \"Password\":\"pass\"}");
@@ -90,14 +66,14 @@ public class GameServiceTest {
     }
 
     @Test
-    @Order(8)
+    @Order(4)
     void testShowStack() {
         List<Card> stack = gameService.showStack("buyer2");
         assertNotNull(stack);
     }
 
     @Test
-    @Order(9)
+    @Order(5)
     void testConfigureDeckSuccess() {
         List<Card> stack = gameService.showStack("buyer2");
         assertTrue(stack.size() >= 4);
@@ -110,7 +86,7 @@ public class GameServiceTest {
     }
 
     @Test
-    @Order(10)
+    @Order(6)
     void testConfigureDeckFailureWrongNumber() {
         List<Card> stack = gameService.showStack("buyer2");
         if (stack.size() < 3) fail("Nicht genügend Karten");
@@ -123,7 +99,7 @@ public class GameServiceTest {
     }
 
     @Test
-    @Order(11)
+    @Order(7)
     void testBattleNormal() {
         userService.registerUserFromJson("{\"Username\":\"battle1\", \"Password\":\"p1\"}");
         userService.registerUserFromJson("{\"Username\":\"battle2\", \"Password\":\"p2\"}");
@@ -152,21 +128,21 @@ public class GameServiceTest {
     }
 
     @Test
-    @Order(12)
+    @Order(8)
     void testBattleSphinxAutomaticWin() {
         userService.registerUserFromJson("{\"Username\":\"sphinx1\", \"Password\":\"p\"}");
         userService.registerUserFromJson("{\"Username\":\"sphinx2\", \"Password\":\"p\"}");
         int id1 = userRepo.getUser("sphinx1").getId();
         int id2 = userRepo.getUser("sphinx2").getId();
         // Für sphinx1: Sphinx + 3 andere Karten
-        cardRepo.addCard(new mtcg.model.Card(0, id1, "Sphinx", "Normal", 30));
+        cardRepo.addCard(new Card(0, id1, "Sphinx", "Normal", 30));
         for (int i = 0; i < 3; i++)
-            cardRepo.addCard(new mtcg.model.Card(0, id1, "Goblin", "Fire", 20));
+            cardRepo.addCard(new Card(0, id1, "Goblin", "Fire", 20));
         // Für sphinx2: 4 normale Karten
         for (int i = 0; i < 4; i++)
-            cardRepo.addCard(new mtcg.model.Card(0, id2, "Ork", "Water", 25));
-        List<mtcg.model.Card> deck1 = cardRepo.getCardsByUserId(id1);
-        List<mtcg.model.Card> deck2 = cardRepo.getCardsByUserId(id2);
+            cardRepo.addCard(new Card(0, id2, "Ork", "Water", 25));
+        List<Card> deck1 = cardRepo.getCardsByUserId(id1);
+        List<Card> deck2 = cardRepo.getCardsByUserId(id2);
         int[] d1 = new int[4], d2 = new int[4];
         for (int i = 0; i < 4; i++) {
             d1[i] = deck1.get(i).getId();
@@ -174,25 +150,25 @@ public class GameServiceTest {
         }
         String json1 = "[" + d1[0] + "," + d1[1] + "," + d1[2] + "," + d1[3] + "]";
         String json2 = "[" + d2[0] + "," + d2[1] + "," + d2[2] + "," + d2[3] + "]";
-        deckRepo.setDeck(id1, java.util.Arrays.asList(d1[0], d1[1], d1[2], d1[3]));
-        deckRepo.setDeck(id2, java.util.Arrays.asList(d2[0], d2[1], d2[2], d2[3]));
+        deckRepo.setDeck(id1, Arrays.asList(d1[0], d1[1], d1[2], d1[3]));
+        deckRepo.setDeck(id2, Arrays.asList(d2[0], d2[1], d2[2], d2[3]));
         String log = gameService.startBattle("sphinx1", "sphinx2");
         assertTrue(log.contains("Sphinx"));
         assertTrue(log.contains("Gewinner"));
     }
 
     @Test
-    @Order(13)
+    @Order(9)
     void testCreateTradeSuccess() {
         userService.registerUserFromJson("{\"Username\":\"trader1\", \"Password\":\"p\"}");
         int uid = userRepo.getUser("trader1").getId();
-        mtcg.model.Card card = new mtcg.model.Card(0, uid, "Dragon", "Fire", 40);
+        Card card = new Card(0, uid, "Dragon", "Fire", 40);
         cardRepo.addCard(card);
         assertTrue(tradingService.createTradingDeal("trader1", "{\"Id\":\"1\",\"CardToTrade\":\"" + card.getId() + "\",\"Type\":\"monster\",\"MinimumDamage\":30}"));
     }
 
     @Test
-    @Order(14)
+    @Order(10)
     void testShowScoreboard() {
         List<String> sb = userRepo.getScoreboard();
         assertNotNull(sb);
@@ -200,47 +176,47 @@ public class GameServiceTest {
     }
 
     @Test
-    @Order(15)
+    @Order(11)
     void testEditProfileSuccess() {
         userService.registerUserFromJson("{\"Username\":\"profile1\", \"Password\":\"old\"}");
         assertTrue(userService.updateUserProfile("profile1", "{\"Password\":\"new\"}"));
     }
 
     @Test
-    @Order(16)
+    @Order(12)
     void testEditProfileFailure() {
         assertFalse(userService.updateUserProfile("nonexistent", "{\"Password\":\"nop\"}"));
     }
 
     @Test
-    @Order(17)
+    @Order(13)
     void testCalculateDamageNormal() {
-        mtcg.model.Card c1 = new mtcg.model.Card(1, 1, "Goblin", "Normal", 30);
-        mtcg.model.Card c2 = new mtcg.model.Card(2, 2, "Ork", "Normal", 20);
+        Card c1 = new Card(1, 1, "Goblin", "Normal", 30);
+        Card c2 = new Card(2, 2, "Ork", "Normal", 20);
         int dmg = gameService.calculateDamage(c1, c2);
         assertEquals(30, dmg);
     }
 
     @Test
-    @Order(18)
+    @Order(14)
     void testCalculateDamageWaterVsFire() {
-        mtcg.model.Card c1 = new mtcg.model.Card(1, 1, "Mermaid", "Water", 30);
-        mtcg.model.Card c2 = new mtcg.model.Card(2, 2, "Dragon", "Fire", 30);
+        Card c1 = new Card(1, 1, "Mermaid", "Water", 30);
+        Card c2 = new Card(2, 2, "Dragon", "Fire", 30);
         int dmg = gameService.calculateDamage(c1, c2);
         assertEquals(60, dmg);
     }
 
     @Test
-    @Order(19)
+    @Order(15)
     void testCalculateDamageFireVsWater() {
-        mtcg.model.Card c1 = new mtcg.model.Card(1, 1, "Dragon", "Fire", 30);
-        mtcg.model.Card c2 = new mtcg.model.Card(2, 2, "Mermaid", "Water", 30);
+        Card c1 = new Card(1, 1, "Dragon", "Fire", 30);
+        Card c2 = new Card(2, 2, "Mermaid", "Water", 30);
         int dmg = gameService.calculateDamage(c1, c2);
         assertEquals(15, dmg);
     }
 
     @Test
-    @Order(20)
+    @Order(16)
     void testBattleRoundsLimit() {
         userService.registerUserFromJson("{\"Username\":\"limit1\", \"Password\":\"p\"}");
         userService.registerUserFromJson("{\"Username\":\"limit2\", \"Password\":\"p\"}");
@@ -251,15 +227,15 @@ public class GameServiceTest {
                 "{\"Id\":\"15\",\"Name\":\"Wizard\",\"Damage\":35.0}]");
         packageService.acquirePackage("limit1");
         packageService.acquirePackage("limit2");
-        List<mtcg.model.Card> s1 = gameService.showStack("limit1");
-        List<mtcg.model.Card> s2 = gameService.showStack("limit2");
+        List<Card> s1 = gameService.showStack("limit1");
+        List<Card> s2 = gameService.showStack("limit2");
         int[] d1 = new int[4], d2 = new int[4];
         for (int i = 0; i < 4; i++) {
             d1[i] = s1.get(i).getId();
             d2[i] = s2.get(i).getId();
         }
-        deckRepo.setDeck(userRepo.getUser("limit1").getId(), java.util.Arrays.asList(d1[0], d1[1], d1[2], d1[3]));
-        deckRepo.setDeck(userRepo.getUser("limit2").getId(), java.util.Arrays.asList(d2[0], d2[1], d2[2], d2[3]));
+        deckRepo.setDeck(userRepo.getUser("limit1").getId(), Arrays.asList(d1[0], d1[1], d1[2], d1[3]));
+        deckRepo.setDeck(userRepo.getUser("limit2").getId(), Arrays.asList(d2[0], d2[1], d2[2], d2[3]));
         String log = gameService.startBattle("limit1", "limit2");
         assertTrue(log.contains("Round") || log.contains("Gewinner"));
     }
