@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  database:
+    build: src/main/resources/database/.
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mtcgdatabase
+  adminer:
+    image: adminer
+    restart: always
+    depends_on:
+      - database
+    ports:
+      - 9090:8080
+
+# usage of adminer:
+# http://localhost:9090
+# for server fill in 'database'
