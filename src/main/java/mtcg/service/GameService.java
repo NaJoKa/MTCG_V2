@@ -17,8 +17,7 @@ public class GameService {
     private CardRepository cardRepo = new CardRepository();
     private DeckRepository deckRepo = new DeckRepository();
     private BattleRepository battleRepo = new BattleRepository();
-    // Für diese einfache Implementierung wird Trading über TradingService abgewickelt
-    // Battle-Logik:
+
     public String startBattle(String username, String opponentUsername) {
         User user1 = userRepo.getUser(username);
         User user2 = userRepo.getUser(opponentUsername);
@@ -40,7 +39,7 @@ public class GameService {
             Card card1 = deck1.remove((int)(Math.random() * deck1.size()));
             Card card2 = deck2.remove((int)(Math.random() * deck2.size()));
             System.out.println("Runde " + rounds + ": " + card1.getName() + " vs. " + card2.getName());
-            // Unique Feature: Sphinx gewinnt automatisch, falls sie gespielt wird und der Gegner nicht ebenfalls Sphinx
+            // Unique Feature
             if (card1.getName().equalsIgnoreCase("Sphinx") && !card2.getName().equalsIgnoreCase("Sphinx")) {
                 log.append("Round ").append(rounds).append(": ").append(card1.getName()).append(" (Sphinx) gewinnt automatisch gegen ").append(card2.getName()).append("\n");
                 deck1.add(card2);

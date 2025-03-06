@@ -42,7 +42,7 @@ public class GameServiceTest {
     @Order(1)
     void testBuyPackageSuccess() {
         userService.registerUserFromJson("{\"Username\":\"buyer1\", \"Password\":\"pass\"}");
-        assertTrue(packageService.acquirePackage("buyer1") == false); // Da noch kein Package vorhanden – Test für Moneysituation
+        assertTrue(packageService.acquirePackage("buyer1") == false);
     }
 
     @Test
@@ -110,7 +110,7 @@ public class GameServiceTest {
                 "{\"Id\":\"10\",\"Name\":\"Wizard\",\"Damage\":35.0}]");
         packageService.acquirePackage("battle1");
         packageService.acquirePackage("battle2");
-        // Konfiguriere jeweils ein Deck (hier wird vereinfacht, indem die ersten 4 Karten genommen werden)
+
         List<Card> stack1 = gameService.showStack("battle1");
         List<Card> stack2 = gameService.showStack("battle2");
         if (stack1.size() < 4 || stack2.size() < 4) fail("Nicht genügend Karten");

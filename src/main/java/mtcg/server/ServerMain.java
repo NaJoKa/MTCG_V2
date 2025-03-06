@@ -31,7 +31,7 @@ public class ServerMain {
         System.out.println("DeckController neue Instanz");
         new StatsController(server);
         System.out.println("StatsController neue Instanz");
-        //new ScoreboardController(server);
+        //new ScoreboardController(server); -  nicht vollständig
         //System.out.println("ScoreboardController instanziert");
         new BattleController(server);
         System.out.println("BattleController instanziert");

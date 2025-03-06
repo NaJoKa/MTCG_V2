@@ -20,7 +20,7 @@ public class TradingService {
             var user = userRepo.getUser(username);
             if (user == null)
                 return false;
-            // Hier wird angenommen, dass CardToTrade eine Zahl als String ist
+            // CardToTrade eine Zahl als String
             var card = cardRepo.getCardById(Integer.parseInt(deal.getCardToTrade()));
             if (card == null || card.getUserId() != user.getId())
                 return false;

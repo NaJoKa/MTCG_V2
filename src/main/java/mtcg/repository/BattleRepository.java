@@ -13,7 +13,6 @@ public class BattleRepository {
             if ("Unentschieden".equals(winner))
                 ps.setNull(3, java.sql.Types.INTEGER);
             else
-                // Vereinfachung: Setze Gewinner als user1Id, wenn nicht anders ermittelt
                 ps.setInt(3, user1Id);
             ps.executeUpdate();
             System.out.println("BattleRepository: Battle zwischen User " + user1Id + " und User " + user2Id + " gespeichert. Gewinner: " + winner);

@@ -10,7 +10,6 @@ public class PackageRepository {
     private List<Card> currentPackage = new ArrayList<>();
 
     public void addPackageCard(CardDefinition cd) {
-        // Erzeuge eine Karte ohne Besitzer; setze default Element "Normal"
         Card card = new Card(0, 0, cd.getName(), "Normal", (int) cd.getDamage());
         currentPackage.add(card);
         System.out.println("PackageRepository: Karte " + cd.getName() + " zum aktuellen Package hinzugefügt.");

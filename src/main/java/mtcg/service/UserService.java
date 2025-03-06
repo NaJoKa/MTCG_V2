@@ -50,7 +50,7 @@ public class UserService {
         try {
             User user = userRepo.getUser(username);
             if (user == null) return false;
-            // Für dieses Beispiel wird nur das Passwort aktualisiert
+            //Passwort wird aktualisiert
             ProfileData data = mapper.readValue(json, ProfileData.class);
             System.out.println("UserService: Profil wird aktualsiert für: " + user.getUsername());
             if (data.getPassword() != null && !data.getPassword().isEmpty())
